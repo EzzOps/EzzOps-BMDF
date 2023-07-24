@@ -1,0 +1,42 @@
+pipline {
+    agent any
+    stages {
+        stage ('Checkout'){
+            steps {
+                echo 'Checkout'
+
+            }
+
+        }
+        stage ('Build'){
+            steps {
+                echo 'Build'
+            }
+
+        }
+        stage ('Test'){
+            steps {
+                echo 'Test'
+            }
+
+        }
+        stage ('SCA'){
+            steps{
+                echo 'SCA'
+            }
+
+        }
+        stage ('Deploy'){
+            steps{
+                echo 'Deploy'
+            }
+
+        }
+        stage ('API Test'){
+            steps{
+                echo 'API Test'
+            }
+
+        }
+    }
+}
