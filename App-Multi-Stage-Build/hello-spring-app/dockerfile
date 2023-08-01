@@ -1,7 +1,9 @@
-FROM ubuntu:latest
+##FROM ubuntu:latest
 ##FROM maven:latest
-FROM openjdk:latest
-WORKDIR /Ezz
-COPY . .
-CMD [ "java","-jar","my-hello-world-app-1.0.0.jar"]
-EXPOSE 8080
+##FROM openjdk:latest
+##WORKDIR /Ezz
+##COPY . .
+##CMD [ "java","-jar","my-hello-world-app-1.0.0.jar"]
+##EXPOSE 8080
+
+
