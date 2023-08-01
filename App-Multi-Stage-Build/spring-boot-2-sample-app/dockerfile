@@ -1,0 +1,29 @@
+# FROM maven:latest AS build
+# WORKDIR /app
+# COPY . .
+# RUN mvn clean package -DskipTests
+# FROM tomcat:latest
+# WORKDIR /app
+# # COPY --from=build /app/target/*.war ./spring.war
+# COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/
+# ENTRYPOINT [ "/usr/local/tomcat/bin/catalina.sh", "run" ]
+# # FROM maven:latest AS backend
+# # WORKDIR /back
+# # COPY  . .
+# # RUN mvn  clean package -Dmaven.test.skip=true 
+# # FROM tomcat:latest
+# # WORKDIR /app
+# # COPY --from=backend /back/magenta-web/target/*.war /usr/local/tomcat/webapps/
+# # COPY ./index.jsp /usr/local/tomcat/webapps/ROOT/
+# # RUN chown -R 1001:1001 /opt/
+# # EXPOSE 8080
+# # ENTRYPOINT [ "/usr/local/tomcat/bin/catalina.sh", "run" ]
+# #----------------------------
+# # FROM maven:latest AS build
+# # WORKDIR /app
+# # COPY . .
+# # RUN mvn clean package -DskipTests
+# # FROM openjdk:latest
+# # WORKDIR /app
+# # COPY --from=build /app/target/*.jar ./spring.jar
+# # CMD [ "java", "-jar", "spring.jar" ]
