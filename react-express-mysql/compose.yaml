@@ -1,0 +1,38 @@
+services:
+  db:
+    image: mysql 
+    volumes:
+      - db-BM:/var/lib/mysql
+    networks:
+      - private
+  backend:
+    build:
+      context: backend
+    ports:
+      - 80:80
+    volumes:
+      - ./backend/:/backend-app
+    networks:
+      - public
+      - private
+    depends_on:
+      - db
+  redis:
+    image: redis
+    volumes:
+      - db-BM:/var/lib/mysql
+  frontend:
+    build:
+      context: frontend
+    ports:
+      - 3001:3001
+    networks:
+      - public
+    depends_on:
+      - backend
+networks:
+  public:
+  private:
+volumes:
+  db-BM:
+
